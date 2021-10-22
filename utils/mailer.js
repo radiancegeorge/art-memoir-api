@@ -10,7 +10,7 @@ const defaultData = (data) => {
 };
 const sendMail = async ({ data, to = [] }) => {
   const transport = nodemailer.createTransport({
-    host: "afenmail.com",
+    host: "artmemoir.org",
     port: 465,
     secure: true,
     auth: {
@@ -22,7 +22,7 @@ const sendMail = async ({ data, to = [] }) => {
   try {
     const send = await transport.sendMail({
       html: data.name ? defaultData(data) : data,
-      to: to.length ? to : "afen@afengroup.com",
+      to: to.length ? to : "admin@artmemoir.org",
       from: `Afen <${email}>`,
       subject: data.title || "Afen",
     });
