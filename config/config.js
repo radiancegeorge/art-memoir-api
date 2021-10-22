@@ -1,0 +1,22 @@
+require("dotenv").config();
+const { username, password, host, database } = process.env;
+module.exports = {
+  development: {
+    username,
+    password,
+    database,
+    host,
+    dialect: "mysql",
+  },
+  test: {
+    storage: "./db.sqlite",
+    dialect: "sqlite",
+  },
+  production: {
+    username: "root",
+    password: null,
+    database: "database_production",
+    host: "127.0.0.1",
+    dialect: "mysql",
+  },
+};
