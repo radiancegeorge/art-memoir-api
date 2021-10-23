@@ -8,6 +8,7 @@ const admin = require("./routes/admin");
 const erroHandler = require("./middleware/errorHandler");
 const subscribeRoute = require("./routes/subscribe");
 const contact = require("./routes/contact");
+const nft = require("./routes/nft");
 const app = express();
 const port = process.env.port || 4000;
 
@@ -17,9 +18,16 @@ app.use(express.json());
 
 app.use("/post", posts);
 app.use("/covers", express.static(path.join(__dirname, "./uploads")));
+app.use("/nftStore", express.static(path.join(__dirname, "./nftStore")));
+app.use("/carousel", express.static(path.join(__dirname, "./carousel")));
+app.use(
+  "/announcement",
+  express.static(path.join(__dirname, "./announcement"))
+);
 app.use("/admin", admin);
 app.use("/subscribe", subscribeRoute);
 app.use("/contact", contact);
+app.use("/nft", nft);
 app.use(
   "/mailassets",
   express.static(path.join(__dirname, "/public/mailassets"))

@@ -1,7 +1,7 @@
 const express = require("express");
 const { subscribe } = require("../controller/subscription");
 const { getCount, bulkMail } = require("../controller/mailer");
-const uploads = require("../middleware/multer");
+const { uploads } = require("../middleware/multer");
 const protect = require("../middleware/protect");
 const subscribeRoute = express.Router();
 subscribeRoute
