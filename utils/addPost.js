@@ -12,20 +12,34 @@ const deleteBlogPost = async (id) => {
   return true;
 };
 
-const getAll = async ({ limit, page }) => {
-  let offset;
-  let maxPage;
-  let totalPosts;
-  if (page) {
-    limit = limit || 1;
-    totalPosts = await Blog_Posts.count();
-    maxPage = totalPosts / Number(page);
-  }
-  const all = await Blog_Posts.findAll({
+const getAll = async (data) => {
+  const { limit = 10, id, title, page = 1 } = data;
+  const offset = (page - 1) * limit;
+  const postCount = await Blog_Posts.count({
+    where: {
+      ...(id && { id }),
+      ...(title && {
+        title: {
+          [Op.like]: `%${title}%`,
+        },
+      }),
+    },
+  });
+  const totalPages = Math.ceil(postCount / limit);
+  const posts = await Blog_Posts.findAll({
+    where: {
+      ...(id && { id }),
+      ...(title && {
+        title: {
+          [Op.like]: `%${title}%`,
+        },
+      }),
+    },
     limit,
     offset,
+    order: [["id", "desc"]],
   });
-  return all;
+  return { posts, postCount, currentPage: page, totalPages };
 };
 
 const getSinglePost = async (id) => {

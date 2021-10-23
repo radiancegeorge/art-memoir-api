@@ -10,9 +10,10 @@ const protect = require("../middleware/protect");
 const posts = express.Router();
 
 posts
-  .post("/new_post", protect, uploads.single("cover"), addPost)
-  .get("/all_posts", fetchAllPosts)
-  .get("/single", getAPost)
-  .post("/delete", protect, removePost);
+  .route("/")
+  .post(protect, uploads.single("cover"), addPost)
+  .get(fetchAllPosts)
+  .delete(protect, removePost);
 
+posts.route("/single").get(getAPost);
 module.exports = posts;

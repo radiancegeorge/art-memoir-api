@@ -115,7 +115,335 @@
 		},
 		{
 			"name": "Blog",
-			"item": []
+			"item": [
+				{
+					"name": "make blog post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "post",
+									"value": "this is some post section",
+									"type": "text"
+								},
+								{
+									"key": "medium_link",
+									"value": "medium link section",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "title section",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/Users/radianceobi/Downloads/blogbg.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}post",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "make blog post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "post",
+											"value": "this is some post section",
+											"type": "text"
+										},
+										{
+											"key": "medium_link",
+											"value": "medium link section",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "title section",
+											"type": "text"
+										},
+										{
+											"key": "cover",
+											"type": "file",
+											"src": "/Users/radianceobi/Downloads/blogbg.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}post",
+									"host": [
+										"{{host}}post"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"92-Tb8iG3ijALBbfZcwrTjm5TO0Le4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 22:38:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"post\": \"this is some post section\",\n    \"medium_link\": \"medium link section\",\n    \"title\": \"title section\",\n    \"image\": \"http://localhost:4000/covers/blogbg.png\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?limit=1&id=1",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}post?limit=1&id=1",
+									"host": [
+										"{{host}}post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "3",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "288"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"120-SaPw02nv5Y2NMmOauGi/Qfck1+I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 22:44:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"posts\": [\n        {\n            \"id\": 1,\n            \"post\": \"this is some post section\",\n            \"medium_link\": \"medium link section\",\n            \"title\": \"title section\",\n            \"image\": \"http://localhost:4000/covers/blogbg.png\",\n            \"createdAt\": \"2021-10-23T22:38:38.788Z\",\n            \"updatedAt\": \"2021-10-23T22:38:38.788Z\"\n        }\n    ],\n    \"postCount\": 1,\n    \"currentPage\": 1,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}post",
+							"host": [
+								"{{host}}post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}post",
+									"host": [
+										"{{host}}post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-qKsspohbLO6OV0DFPjEGJBKf+oc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 22:47:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"post deleted\"\n}"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "nft",
@@ -350,6 +678,497 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "carousel store",
+			"item": [
+				{
+					"name": "add carousel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/radianceobi/Downloads/blogbg.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}carousel_store",
+							"host": [
+								"{{host}}carousel_store"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add carousel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/radianceobi/Downloads/blogbg.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}carousel_store",
+									"host": [
+										"{{host}}carousel_store"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-iXty+HZyBF6Zy5ZLw7TPpY8Deq8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 06:31:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"images have been exceeded, please delete then try again\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get carousel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}carousel_store",
+							"host": [
+								"{{host}}carousel_store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}carousel_store",
+							"host": [
+								"{{host}}carousel_store"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}carousel_store",
+									"host": [
+										"{{host}}carousel_store"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-upH8NzRVr8hf3OQgttmRjDS9NEE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 06:34:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"image deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "announcement",
+			"item": [
+				{
+					"name": "create announcement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/radianceobi/Downloads/blogbg.png"
+								},
+								{
+									"key": "title",
+									"value": "some title",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "some content section",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}announcement",
+							"host": [
+								"{{host}}announcement"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/radianceobi/Downloads/blogbg.png"
+										},
+										{
+											"key": "title",
+											"value": "some title",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "some content section",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}announcement",
+									"host": [
+										"{{host}}announcement"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-DsX+JM38Yf1AAxKtAge9Ze3Qf6A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 22:19:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mesage\": \"announcement Created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get announcement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}announcement",
+							"host": [
+								"{{host}}announcement"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}announcement?limit=2&page=2",
+									"host": [
+										"{{host}}announcement"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "530"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"212-r9sg9GkGMYWwjSysZRjJJAGTFcE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 22:21:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"announcements\": [\n        {\n            \"id\": 3,\n            \"image\": \"http://localhost:4000/announcement_img/announcement_1635027550568_blogbg.png\",\n            \"title\": \"some title\",\n            \"content\": \"some content section\",\n            \"createdAt\": \"2021-10-23T22:19:10.580Z\",\n            \"updatedAt\": \"2021-10-23T22:19:10.580Z\"\n        },\n        {\n            \"id\": 2,\n            \"image\": \"http://localhost:4000/announcement_img/announcement_1635027549200_blogbg.png\",\n            \"title\": \"some title\",\n            \"content\": \"some content section\",\n            \"createdAt\": \"2021-10-23T22:19:09.241Z\",\n            \"updatedAt\": \"2021-10-23T22:19:09.241Z\"\n        }\n    ],\n    \"announcementCount\": 5,\n    \"currentPage\": \"2\",\n    \"totalPages\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}announcement",
+							"host": [
+								"{{host}}announcement"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}announcement",
+									"host": [
+										"{{host}}announcement"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-taFW723FL/wx3NZ9y55Yc57Oo8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Oct 2021 22:22:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Announcement successfully deleted\"\n}"
+						}
+					]
 				}
 			]
 		}

@@ -17,7 +17,7 @@ const addPost = asyncHandler(async (req, res, next) => {
 });
 
 const removePost = asyncHandler(async (req, res, next) => {
-  const { id } = req.query;
+  const { id } = req.body;
   const isDeleted = await deleteBlogPost(id);
   if (isDeleted)
     res.status(200).json({
