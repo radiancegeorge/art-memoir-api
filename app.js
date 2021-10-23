@@ -9,6 +9,7 @@ const erroHandler = require("./middleware/errorHandler");
 const subscribeRoute = require("./routes/subscribe");
 const contact = require("./routes/contact");
 const nft = require("./routes/nft");
+const carousel = require("./routes/carousel");
 const app = express();
 const port = process.env.port || 4000;
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/post", posts);
+app.use("/carousel_store", carousel);
 app.use("/covers", express.static(path.join(__dirname, "./uploads")));
 app.use("/nftStore", express.static(path.join(__dirname, "./nftStore")));
 app.use("/carousel", express.static(path.join(__dirname, "./carousel")));
