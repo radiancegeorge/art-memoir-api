@@ -1171,6 +1171,284 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "subscribe",
+			"item": [
+				{
+					"name": "add mail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "radiancegeorgetests@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}subscribe",
+							"host": [
+								"{{host}}subscribe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "radiancegeorgetests@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}subscribe",
+									"host": [
+										"{{host}}subscribe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-SytoCrkITPPnT971Sw0+EgFzIVs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Oct 2021 12:13:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successful\"\n}"
+						}
+					]
+				},
+				{
+					"name": "send Bulk mail/campaign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/Users/radianceobi/Downloads/blogbg.png"
+								},
+								{
+									"key": "title",
+									"value": "this is a title section",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "this is a cotent section",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}subscribe/pushBulkMail",
+							"host": [
+								"{{host}}subscribe"
+							],
+							"path": [
+								"pushBulkMail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send Bulk mail/campaign",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "cover",
+											"type": "file",
+											"src": "/Users/radianceobi/Downloads/blogbg.png"
+										},
+										{
+											"key": "title",
+											"value": "this is a title section",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "this is a cotent section",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}subscribe/pushBulkMail",
+									"host": [
+										"{{host}}subscribe"
+									],
+									"path": [
+										"pushBulkMail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15-ga8EF/lp+ThIsc8w/OHbk4hPrME\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Oct 2021 12:20:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get subscribers count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}subscribe/count",
+							"host": [
+								"{{host}}subscribe"
+							],
+							"path": [
+								"count"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get subscribers count",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}subscribe/count",
+									"host": [
+										"{{host}}subscribe"
+									],
+									"path": [
+										"count"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-hRuIfkAGnfwKvpTzajm4bAWdKxE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 24 Oct 2021 12:22:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {

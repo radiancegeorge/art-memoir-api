@@ -23,8 +23,8 @@ const sendMail = async ({ data, to = [] }) => {
     const send = await transport.sendMail({
       html: data.name ? defaultData(data) : data,
       to: to.length ? to : "admin@artmemoir.org",
-      from: `Afen <${email}>`,
-      subject: data.title || "Afen",
+      from: `ArtMemoir <${email}>`,
+      subject: data.title || "ArtMemoir",
     });
     console.log(send);
     if (send) return send;
