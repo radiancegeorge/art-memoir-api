@@ -17,7 +17,7 @@ const bulkMail = asynHandler(async (req, res, next) => {
   //address this when email templates ready
   let barner;
   if (file) {
-    barner = `${process.env.server_url}covers/${file.originalname}`;
+    barner = `${process.env.server_url}covers/${file.filename}`;
     req.body.barner = barner;
   }
   console.log(req.body);

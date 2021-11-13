@@ -10,7 +10,7 @@ const {
 const addPost = asyncHandler(async (req, res, next) => {
   const { file, body } = req;
   if (!file) throw "image upload failed";
-  body.image = `${process.env.server_url}covers/${file.originalname}`;
+  body.image = `${process.env.server_url}covers/${file.filename}`;
   await createPost(body);
   console.log(body);
   res.status(200).json({ ...body });
